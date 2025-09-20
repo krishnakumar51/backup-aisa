@@ -1,0 +1,74 @@
+# Updated Multi-Agent Automation System Requirements
+# Version 2.0.0 with Testing Environment Integration
+
+# Core Framework
+fastapi>=0.100.0
+uvicorn[standard]>=0.22.0
+python-multipart>=0.0.6
+pydantic>=2.0.0
+
+# Database
+aiosqlite>=0.19.0
+
+# AI Integration
+anthropic>=0.25.0
+
+# Web Automation
+playwright>=1.40.0
+selenium>=4.15.0
+beautifulsoup4>=4.12.0
+
+# Mobile Automation
+Appium-Python-Client>=3.0.0
+
+# Image Processing & OCR
+Pillow>=10.0.0
+pytesseract>=0.3.10
+opencv-python>=4.8.0
+
+# Document Processing
+PyPDF2>=3.0.0
+python-docx>=0.8.11
+
+# Data Processing
+pandas>=2.1.0
+numpy>=1.25.0
+
+# HTTP & Networking
+requests>=2.31.0
+httpx>=0.24.0
+
+# Utilities
+python-dateutil>=2.8.2
+pathlib2>=2.3.7
+colorlog>=6.7.0
+
+# Development & Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+
+# Environment Management
+python-dotenv>=1.0.0
+
+# Logging & Monitoring
+structlog>=23.1.0
+
+# File Operations
+watchdog>=3.0.0
+
+# Async Support
+asyncio-mqtt>=0.13.0
+
+# Data Export
+openpyxl>=3.1.0
+
+# System Information
+psutil>=5.9.0
+
+# Virtual Environment
+virtualenv>=20.24.0
+
+
+# LangGraph for state-driven workflows
+langgraph>=0.2.16
+langchain-core>=0.2.43
