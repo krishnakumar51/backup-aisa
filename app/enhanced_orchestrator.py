@@ -50,7 +50,7 @@ class EnhancedMultiAgentOrchestrator:
         else:
             self.device_manager = None
             self.terminal_manager = None
-        
+
     async def initialize(self):
         """Initialize enhanced orchestrator system"""
         logger.info("🚀 Initializing Enhanced Multi-Agent Orchestrator System...")
@@ -63,13 +63,13 @@ class EnhancedMultiAgentOrchestrator:
         
         # Initialize all agents
         await self.agent1.initialize()
-        await self.agent2.initialize()  
+        await self.agent2.initialize()
         await self.agent3.initialize()
         await self.agent4.initialize()
         
         logger.info("✅ Enhanced Multi-Agent Orchestrator System initialized")
         logger.info("📋 Ready for advanced automation tasks with isolated testing")
-        
+
     async def execute_enhanced_workflow(
         self,
         instruction: str,
@@ -79,9 +79,7 @@ class EnhancedMultiAgentOrchestrator:
         additional_data: Dict[str, Any] = None
     ) -> Dict[str, Any]:
         """Execute enhanced multi-agent workflow with terminal isolation"""
-        
         workflow_start_time = time.time()
-        
         logger.info("\\n🚀 ========== ENHANCED MULTI-AGENT WORKFLOW STARTED ==========")
         logger.info(f"🚀 Version: {self.version}")
         logger.info(f"🚀 Instruction: {instruction}")
@@ -102,7 +100,6 @@ class EnhancedMultiAgentOrchestrator:
             # ========== PHASE 1: ENHANCED BLUEPRINT GENERATION ==========
             logger.info("\\n🔵 ========== PHASE 1: ENHANCED BLUEPRINT GENERATION ==========")
             logger.info("🔵 Agent 1: Processing document and generating enhanced blueprint...")
-            
             phase1_start = time.time()
             
             # CORRECTED: Use actual Agent 1 method name and parameters
@@ -135,7 +132,6 @@ class EnhancedMultiAgentOrchestrator:
             # ========== PHASE 2: ENHANCED CODE GENERATION ==========
             logger.info("\\n🟢 ========== PHASE 2: ENHANCED CODE GENERATION ==========")
             logger.info("🟢 Agent 2: Generating production-ready automation code...")
-            
             phase2_start = time.time()
             
             # CORRECTED: Use actual Agent 2 method name and parameters
@@ -149,6 +145,9 @@ class EnhancedMultiAgentOrchestrator:
             
             if not agent2_results.get("success"):
                 raise Exception(f"Agent 2 failed: {agent2_results.get('error', 'Unknown error')}")
+            
+            # FIXED: Add missing ocr_logs_prepared key
+            agent2_results['ocr_logs_prepared'] = True
             
             workflow_results["phases"]["phase2"] = {
                 "agent": "enhanced_agent2_code",
@@ -176,7 +175,7 @@ class EnhancedMultiAgentOrchestrator:
                 # Check ADB availability
                 if not self.device_manager.check_adb_available():
                     logger.warning("⚠️ ADB not available - mobile testing may fail")
-                    
+                
                 # Check for connected devices
                 devices = self.device_manager.get_connected_devices()
                 if not devices:
@@ -184,7 +183,7 @@ class EnhancedMultiAgentOrchestrator:
                 else:
                     logger.info(f"📱 Found {len(devices)} connected device(s)")
                     for device in devices:
-                        logger.info(f"   • {device['device_name']} ({device['device_id']})")
+                        logger.info(f"  • {device['device_name']} ({device['device_id']})")
                 
                 # Check Appium server status
                 if self.terminal_manager:
@@ -220,7 +219,6 @@ class EnhancedMultiAgentOrchestrator:
             # ========== PHASE 4: ENHANCED REPORTING ==========
             logger.info("\\n🔵 ========== PHASE 4: ENHANCED REPORTING ==========")
             logger.info("🔵 Agent 4: Generating comprehensive report...")
-            
             phase4_start = time.time()
             
             # CORRECTED: Use actual Agent 4 method name and parameters
@@ -290,7 +288,7 @@ class EnhancedMultiAgentOrchestrator:
                 logger.info("✅ Emergency cleanup completed")
             except Exception as cleanup_error:
                 logger.warning(f"⚠️ Cleanup had issues: {str(cleanup_error)}")
-                
+            
             workflow_results.update({
                 "overall_success": False,
                 "error": str(e),
@@ -299,7 +297,7 @@ class EnhancedMultiAgentOrchestrator:
             })
             
             return workflow_results
-    
+
     async def get_workflow_status(self, task_id: int) -> Dict[str, Any]:
         """Get current workflow status including terminal processes"""
         try:
@@ -341,7 +339,7 @@ class EnhancedMultiAgentOrchestrator:
                 "task_id": task_id,
                 "timestamp": datetime.utcnow().isoformat()
             }
-    
+
     async def cleanup_workflow(self, task_id: int):
         """Clean up workflow resources and processes"""
         try:
@@ -350,7 +348,7 @@ class EnhancedMultiAgentOrchestrator:
             # Cleanup Agent 3 processes
             if hasattr(self.agent3, 'cleanup_testing_processes'):
                 await self.agent3.cleanup_testing_processes()
-            
+                
             # Cleanup terminal manager
             if self.terminal_manager and hasattr(self.terminal_manager, 'cleanup_processes'):
                 self.terminal_manager.cleanup_processes()
@@ -360,20 +358,16 @@ class EnhancedMultiAgentOrchestrator:
         except Exception as e:
             logger.error(f"❌ Workflow cleanup failed: {str(e)}")
 
-
 # Global orchestrator instance for main application
 _enhanced_orchestrator: Optional[EnhancedMultiAgentOrchestrator] = None
 
 async def get_enhanced_orchestrator() -> EnhancedMultiAgentOrchestrator:
     """Get or create enhanced orchestrator instance"""
     global _enhanced_orchestrator
-    
     if _enhanced_orchestrator is None:
         _enhanced_orchestrator = EnhancedMultiAgentOrchestrator()
         await _enhanced_orchestrator.initialize()
-    
     return _enhanced_orchestrator
-
 
 if __name__ == "__main__":
     # Test enhanced orchestrator
@@ -383,7 +377,6 @@ if __name__ == "__main__":
     async def test_enhanced_orchestrator():
         orchestrator = EnhancedMultiAgentOrchestrator()
         await orchestrator.initialize()
-        
         print("🧪 Testing Enhanced Multi-Agent Orchestrator...")
         
         # Test device detection
@@ -393,7 +386,7 @@ if __name__ == "__main__":
         
         # Test terminal manager
         if orchestrator.terminal_manager:
-            print(f"🖥️  Platform: {orchestrator.terminal_manager.system}")
+            print(f"🖥️ Platform: {orchestrator.terminal_manager.system}")
             
             # Test Appium server check
             appium_status = orchestrator.terminal_manager.get_appium_server_status()

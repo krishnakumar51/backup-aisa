@@ -12,3 +12,65 @@ Download Windows installer
 Install to default location (C:\Program Files\Tesseract-OCR\)
 
 set TESSERACT_PATH="C:\Program Files\Tesseract-OCR\tesseract.exe"
+
+
+
+Get-ChildItem -Path . -Recurse -Directory -Filter "__pycache__" | Remove-Item -Recurse -Force
+
+
+
+
+
+///////////////////////////next problem///////////////////////
+
+SyntaxError: Non-UTF-8 code starting with '\x90' in file D:\SearchLook\aisa-agent-framework-v1\venv\Scripts\python.exe on line 1, but no encoding declared; see https://peps.python.org/pep-0263/ for details
+
+D:\SearchLook\aisa-agent-framework-v1\generated_code\20\agent3>
+
+
+025-09-20 23:18:56,209 - app.enhanced_orchestrator - INFO - 🟢   Ready for Isolated Testing: ✅
+2025-09-20 23:18:56,209 - app.enhanced_orchestrator - INFO - \n🟡 ========== PHASE 3: TERMINAL-ISOLATED TESTING ==========
+2025-09-20 23:18:56,209 - app.enhanced_orchestrator - INFO - 🟡 Agent 3: Setting up isolated testing environment...
+2025-09-20 23:18:56,209 - app.enhanced_orchestrator - INFO - 🟡 Agent 3: Performing mobile environment pre-flight checks...
+2025-09-20 23:18:56,238 - app.utils.device_manager - INFO - ✅ ADB is available
+WARNING:  WatchFiles detected changes in 'generated_code\20\agent2\script.py'. Reloading...
+2025-09-20 23:18:56,626 - app.utils.device_manager - INFO - ✅ Device info retrieved: motorola motorola edge 40 neo
+2025-09-20 23:18:56,626 - app.utils.device_manager - INFO - ✅ Found 1 connected Android device(s)
+2025-09-20 23:18:56,627 - app.enhanced_orchestrator - INFO - 📱 Found 1 connected device(s)
+2025-09-20 23:18:56,627 - app.enhanced_orchestrator - INFO -   • motorola motorola edge 40 neo (ZD222GXYPV)
+2025-09-20 23:18:58,679 - app.enhanced_orchestrator - INFO - 🔧 Appium server status: offline
+2025-09-20 23:18:58,680 - app.agents.enhanced_agent3 - INFO - 🟡 [Agent3] Starting INTELLIGENT testing supervision for task 20
+2025-09-20 23:18:58,685 - app.agents.enhanced_agent3 - INFO - 🟡 [Agent3] Created intelligent monitoring structure: generated_code\20\agent3\monitoring
+2025-09-20 23:18:58,709 - app.agents.enhanced_agent3 - INFO - 🟡 [Agent3] ✅ Script prepared for monitoring: generated_code\20\agent3\script.py
+2025-09-20 23:18:58,713 - app.agents.enhanced_agent3 - INFO - 🟡 [Agent3] ✅ Requirements copied: generated_code\20\agent3\requirements.txt
+2025-09-20 23:18:58,714 - app.agents.enhanced_agent3 - INFO - 🟡 [Agent3] Loaded 6 steps for intelligent monitoring
+2025-09-20 23:18:58,714 - app.agents.enhanced_agent3 - INFO - 🟡 [Agent3] Creating isolated environment with FIXED terminal manager...
+2025-09-20 23:18:58,714 - app.agents.enhanced_agent3 - INFO - 🟡 [Agent3] Creating virtual environment: generated_code\20\agent3\venv
+2025-09-20 23:18:58,714 - app.utils.terminal_manager - INFO - 🔧 Fixed Python path: D:\SearchLook\aisa-agent-framework-v1\venv\Scripts\python.exe
+2025-09-20 23:18:58,715 - app.utils.terminal_manager - INFO - 🔧 Creating virtual environment: D:\SearchLook\aisa-agent-framework-v1\generated_code\20\agent3\venv
+2025-09-20 23:18:58,715 - app.utils.terminal_manager - INFO - 🔧 Using Python: D:\SearchLook\aisa-agent-framework-v1\venv\Scripts\python.exe
+2025-09-20 23:18:58,715 - app.utils.terminal_manager - INFO - 🔧 Executing venv command: "D:\SearchLook\aisa-agent-framework-v1\venv\Scripts\python.exe" -m venv "D:\SearchLook\aisa-agent-framework-v1\generated_code\20\agent3\venv" --clear --copies
+2025-09-20 23:18:58,715 - app.utils.terminal_manager - INFO - 🔧 Executing command: "D:\SearchLook\aisa-agent-framework-v1\venv\Scripts\python.exe" -m venv "D:\SearchLook\aisa-agent-framework-v1\generated_code\20\agent3\venv" --clear --copies
+2025-09-20 23:18:58,752 - app.utils.terminal_manager - ERROR - ❌ Virtual environment creation failed: '\"D:\SearchLook\aisa-agent-framework-v1\venv\Scripts\python.exe\"' is not recognized as an internal or external command,
+operable program or batch file.
+
+2025-09-20 23:18:58,753 - app.agents.enhanced_agent3 - WARNING - 🟡 [Agent3] ⚠️ Virtual environment creation failed: '\"D:\SearchLookk\aisa-agent-framework-v1\venv\Scripts\python.exe\"' is not recognized as an internal or external command,
+operable program or batch file.
+
+2025-09-20 23:18:58,753 - app.agents.enhanced_agent3 - INFO - 🟡 [Agent3] Starting FIXED MOBILE FLOW with INTELLIGENT SUPERVISION... 
+2025-09-20 23:18:58,753 - app.agents.enhanced_agent3 - INFO - 🟡 [Agent3] Using system Python for FIXED mobile flow
+2025-09-20 23:18:58,753 - app.utils.terminal_manager - INFO - 🔧 Executing script in single terminal: generated_code\20\agent3\script.py
+2025-09-20 23:18:58,754 - app.utils.terminal_manager - INFO - 🔧 Fixed Python path: D:\SearchLook\aisa-agent-framework-v1\venv\Scripts\python.exe
+2025-09-20 23:18:58,754 - app.utils.terminal_manager - INFO - 🔧 Opening CMD window with command: start "Automation Task" cmd /k "cd /d ""D:\SearchLook\aisa-agent-framework-v1\generated_code\20\agent3"" && ""D:\SearchLook\aisa-agent-framework-v1\venv\Scripts\python.exe"" ""D:\SearchLook\aisa-agent-framework-v1\generated_code\20\agent3\script.py"" && echo [SINGLE] Script execution completed! && pause"
+2025-09-20 23:18:58,766 - app.utils.terminal_manager - INFO - ✅ Single terminal script started: windows_cmd_start
+2025-09-20 23:18:58,766 - app.agents.enhanced_agent3 - INFO - 🟡 [Agent3] ✅ FIXED mobile flow launched successfully
+2025-09-20 23:18:58,767 - app.agents.enhanced_agent3 - INFO - 🟡 [Agent3] Terminals opened: 1
+2025-09-20 23:18:58,767 - app.agents.enhanced_agent3 - INFO - 🟡 [Agent3] Starting INTELLIGENT SUPERVISION of FIXED mobile execution...
+INFO:     Shutting down
+INFO:     Waiting for background tasks to complete. (CTRL+C to force quit)
+2025-09-20 23:19:59,272 - app.database.database_manager - INFO - 📊 Updated workflow step 1 status: timeout
+2025-09-20 23:19:59,272 - app.agents.enhanced_agent3 - INFO - 🟡 [Agent3] 📊 Updated database for step 1: timeout
+
+
+🔧 Opening CMD window with command: start "Automation Task" cmd /k "cd /d ""D:\SearchLook\aisa-agent-framework-v1\generated_code\20\agent3"" && ""D:\SearchLook\aisa-agent-framework-v1\venv\Scripts\python.exe"" ""D:\SearchLook\aisa-agent-framework-v1\generated_code\20\agent3\script.py"" && echo [SINGLE] Script execution completed! && pause"
+this is creaitng problem actually ...this is exectuing in whole line nothing comes in...maybe we can follow the approach of exectuing one commmadn at aone time 

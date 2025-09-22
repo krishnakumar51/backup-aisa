@@ -4,13 +4,12 @@ Contains device management, terminal management, and other utility classes
 """
 
 from .device_manager import DeviceManager, detect_android_devices
-from .terminal_manager import TerminalManager, ensure_testing_environment
+from .terminal_manager import TerminalManager
 
 __all__ = [
     "DeviceManager",
     "detect_android_devices", 
     "TerminalManager",
-    "ensure_testing_environment"
 ]
 
 # Package metadata
